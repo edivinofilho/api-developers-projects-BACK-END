@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS "developerInfo" (
 	"developerSince" DATE NOT NULL,
 	"preferredOS" VARCHAR(50),
 	"developerId" INTEGER NOT NULL UNIQUE,
-	FOREIGN KEY ("developerId") REFERENCES developers(id) ON DELETE CASCADE	
+	FOREIGN KEY ("developerId") REFERENCES "developers"(id) ON DELETE CASCADE	
 );
 
 CREATE TABLE IF NOT EXISTS "projects" (
@@ -19,5 +19,5 @@ CREATE TABLE IF NOT EXISTS "projects" (
 	"startDate" DATE NOT NULL,
 	"endDate" DATE,
 	"developerId" INTEGER,
-	FOREIGN KEY ("developerId") REFERENCES developers(id) ON DELETE SET NULL
+	FOREIGN KEY ("developerId") REFERENCES "developers"(id) ON DELETE SET NULL
 );

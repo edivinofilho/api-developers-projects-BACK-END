@@ -1,7 +1,7 @@
-type newDeveloper = {
+type NewDeveloper = {
     id: number;
     name: string;
     email: string;
 }
 
-export { newDeveloper };
+export { NewDeveloper };
