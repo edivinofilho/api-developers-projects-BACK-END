@@ -1,3 +1,5 @@
+CREATE TYPE "PREFERRED_OS" AS ENUM ('Windows', 'Linux', 'MacOS');
+
 CREATE TABLE IF NOT EXISTS "developers" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(50) NOT NULL,
@@ -7,7 +9,7 @@ CREATE TABLE IF NOT EXISTS "developers" (
 CREATE TABLE IF NOT EXISTS "developerInfo" (
 	"id" SERIAL PRIMARY KEY,
 	"developerSince" DATE NOT NULL,
-	"preferredOS" VARCHAR(50),
+	"preferredOS" "PREFERRED_OS" NOT NULL,
 	"developerId" INTEGER NOT NULL UNIQUE,
 	FOREIGN KEY ("developerId") REFERENCES "developers"(id) ON DELETE CASCADE	
 );

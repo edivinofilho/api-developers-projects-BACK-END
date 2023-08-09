@@ -1,3 +1,3 @@
-import { developersRouter } from "./developers.router";
+import developerRouter from "./developer.router";
  
-export { developersRouter };
+export { developerRouter };
