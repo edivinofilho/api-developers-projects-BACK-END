@@ -1,4 +1,4 @@
 import developerServices from "./developer.services";
-import developerInfoServices from "./developerInfo.services";
+import projectsServices from "./projects.services";
 
-export { developerServices, developerInfoServices };
+export { developerServices, projectsServices };

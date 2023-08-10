@@ -1,4 +1,4 @@
 import { Developer, DeveloperResult, DeveloperCreate } from "./developers.interfaces";
-import { DeveloperInfo, DeveloperInfoResult, DeveloperInfoCreate } from "./developerInfo.interface";
+import { Projects, ProjectsResult, ProjectsCreate } from "./projects.interfaces";
 
-export { Developer, DeveloperResult, DeveloperCreate, DeveloperInfo, DeveloperInfoResult, DeveloperInfoCreate };
+export { Developer, DeveloperResult, DeveloperCreate, Projects, ProjectsResult, ProjectsCreate };

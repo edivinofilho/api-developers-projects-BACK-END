@@ -1,6 +1,7 @@
 import format from "pg-format";
 import { Developer, DeveloperCreate, DeveloperResult } from "../interfaces";
 import { client } from "../database";
+import { DeveloperInfoCreate, DeveloperInfo, DeveloperInfoResult } from "../interfaces/developerInfo.interface";
 
 
 const create = async (payload: DeveloperCreate): Promise<Developer> => {
@@ -69,5 +70,20 @@ const destroy = async(id: string): Promise<Developer> => {
     return queryResult.rows[0]
 };
 
+const createInfo = async(payload: DeveloperInfoCreate): Promise<DeveloperInfo> => {
+    const queryString: string = format(`
+        INSERT INTO "developerInfo" (%I)
+        VALUES (%L)
+        RETURNING *;`,
+        Object.keys(payload),
+        Object.values(payload)    
+    )
 
-export default { create, read, readById, update, destroy };
+    const queryResult: DeveloperInfoResult = await client.query(queryString);
+
+    console.log(queryResult.rows[0])
+    return queryResult.rows[0];
+};
+
+
+export default { create, read, readById, update, destroy, createInfo };

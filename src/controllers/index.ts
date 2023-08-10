@@ -1,4 +1,4 @@
 import developerControllers from "./developer.controllers";
-import developerInfoControllers from "./developerInfo.controllers";
+import projectsControllers from "./projects.controllers";
 
-export { developerControllers, developerInfoControllers };
+export { developerControllers, projectsControllers };

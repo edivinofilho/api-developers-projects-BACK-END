@@ -1,3 +1,4 @@
 import developerRouter from "./developer.router";
+import projectsRouter from "./projects.router";
  
-export { developerRouter };
+export { developerRouter, projectsRouter };
