@@ -27,7 +27,12 @@ const read = async (): Promise<Array<Developer>> => {
 const readById = async (developerId: string): Promise<Developer> => {
     const queryString: string = format(
     `
-    SELECT "dev".id, "dev".name, "dev".email, "devInfo"."developerSince",  "devInfo"."preferredOS"
+    SELECT 
+    "dev".id AS "developerId", 
+    "dev".name AS "developerName", 
+    "dev".email AS "developerEmail", 
+    "devInfo"."developerSince" AS "developerInfoDeveloperSince",  
+    "devInfo"."preferredOS" AS "developerInfoPreferredOS"
     FROM "developers" AS "dev" 
     LEFT JOIN "developerInfo" AS "devInfo"
     ON "dev".id = "devInfo"."developerId"

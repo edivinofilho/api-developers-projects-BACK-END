@@ -25,13 +25,13 @@ const readById = async (projectId: string): Promise<Projects> => {
     "p".name AS "projectName",
     "p".description AS "projectDescription",
     "p".repository AS "projectRepository",
-    "p".startDate AS "projectStartDate",
-    "p".endDate AS "projectEndDate",
-    "dev".name AS "projectDeveloperName", 
-    FROM "projects" AS "p" 
-    LEFT JOIN "developers" AS "dev"
+    "p"."startDate" AS "projectStartDate",
+    "p"."endDate" AS "projectEndDate",
+    "dev".name AS "projectDeveloperName" 
+    FROM "developers" AS "dev" 
+    LEFT JOIN "projects" AS "p"
     ON "dev".id = "p"."developerId"
-    WHERE "dev".id = $1;
+    WHERE "p".id = $1;
     `
     );
 
