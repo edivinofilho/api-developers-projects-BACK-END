@@ -40,7 +40,7 @@ const createInfo = async (req: Request, res: Response): Promise<Response> => {
     const developerInfo: DeveloperInfo = await developerServices.createInfo(payload);
 
     console.log(developerInfo)
-    return res.status(200).json(developerInfo);
+    return res.status(201).json(developerInfo);
 };
 
 export default { create, read, readById, update, destroy, createInfo };

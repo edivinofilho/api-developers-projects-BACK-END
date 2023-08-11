@@ -1,3 +1,5 @@
-import { developerIdExistsMiddleware, emailExistsMiddleware } from "./developer.middlewares";
+import { developerIdExistsMiddleware, emailExistsMiddleware, infoExistsMiddleware, invalidOS } from "./developer.middlewares";
+import { projectIdExistsMiddleware } from "./projects.middlewares";
+import { handleErrors } from "./handleErrors.middlewares";
 
-export { developerIdExistsMiddleware, emailExistsMiddleware };
+export { developerIdExistsMiddleware, emailExistsMiddleware, infoExistsMiddleware, handleErrors, invalidOS, projectIdExistsMiddleware };

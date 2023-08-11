@@ -28,11 +28,11 @@ const readById = async (developerId: string): Promise<Developer> => {
     const queryString: string = format(
     `
     SELECT 
-    "dev".id AS "developerId", 
-    "dev".name AS "developerName", 
-    "dev".email AS "developerEmail", 
-    "devInfo"."developerSince" AS "developerInfoDeveloperSince",  
-    "devInfo"."preferredOS" AS "developerInfoPreferredOS"
+        "dev".id AS "developerId", 
+        "dev".name AS "developerName", 
+        "dev".email AS "developerEmail", 
+        "devInfo"."developerSince" AS "developerInfoDeveloperSince",  
+        "devInfo"."preferredOS" AS "developerInfoPreferredOS"
     FROM "developers" AS "dev" 
     LEFT JOIN "developerInfo" AS "devInfo"
     ON "dev".id = "devInfo"."developerId"
@@ -61,7 +61,6 @@ const update = async(id: string, payload: Developer): Promise<Developer> => {
 
     const queryResult: DeveloperResult = await client.query(queryString, [id]);
 
-    console.log(queryString)
     return queryResult.rows[0];
 };
 
