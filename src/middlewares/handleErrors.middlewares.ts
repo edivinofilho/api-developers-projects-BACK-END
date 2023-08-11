@@ -8,7 +8,7 @@ export const handleErrors = (
   next: NextFunction
 ): Response => {
   if (error instanceof AppError) {
-    return res.status(error.status).json({ error: error.message });
+    return res.status(error.status).json({ message: error.message });
   }
 
   console.error(error);

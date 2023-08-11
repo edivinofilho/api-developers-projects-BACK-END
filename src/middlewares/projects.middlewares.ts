@@ -4,12 +4,11 @@ import { client } from "../database";
 import { AppError } from "../errors";
 
 const projectIdExistsMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const id: string = req.body.id;
+    const id: string = req.params.id;
 
     const queryResult: ProjectsResult = await client.query('SELECT * FROM "projects" WHERE "id" = $1;', [id]);
 
-    console.log(id);
-    if(queryResult.rowCount){
+    if(!queryResult.rowCount){
         throw new AppError("Project not found.", 404)
     }
 

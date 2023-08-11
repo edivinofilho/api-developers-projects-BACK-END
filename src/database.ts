@@ -1,5 +1,5 @@
 import { Client, ClientConfig } from 'pg'
-// import 'dotenv/config'
+import 'dotenv/config'
 
 const databaseConfig = (): ClientConfig => {
     if (process.env.NODE_ENV === 'test') {

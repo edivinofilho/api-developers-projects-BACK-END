@@ -42,8 +42,6 @@ const readById = async (developerId: string): Promise<Developer> => {
 
     const queryResult: DeveloperResult = await client.query(queryString, [developerId])
 
-    console.log(queryResult.rows[0])
-
     return queryResult.rows[0];
 };
 
@@ -76,7 +74,7 @@ const destroy = async(id: string): Promise<Developer> => {
 
 const createInfo = async(payload: DeveloperInfoCreate): Promise<DeveloperInfo> => {
     const queryString: string = format(`
-        INSERT INTO "developerInfo" (%I)
+        INSERT INTO "developerInfos" (%I)
         VALUES (%L)
         RETURNING *;`,
         Object.keys(payload),
@@ -85,7 +83,6 @@ const createInfo = async(payload: DeveloperInfoCreate): Promise<DeveloperInfo> =
 
     const queryResult: DeveloperInfoResult = await client.query(queryString);
 
-    console.log(queryResult.rows[0])
     return queryResult.rows[0];
 };
 

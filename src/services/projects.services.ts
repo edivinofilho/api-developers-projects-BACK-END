@@ -12,7 +12,6 @@ const create = async (payload: ProjectsCreate): Promise<Projects> => {
 
     const queryResult: ProjectsResult = await client.query(queryString);
 
-    console.log(queryResult.rows[0])
     return queryResult.rows[0];
 };
 
@@ -37,8 +36,6 @@ const readById = async (projectId: string): Promise<Projects> => {
 
     const queryResult: ProjectsResult = await client.query(queryString, [projectId])
 
-    console.log(queryResult.rows[0])
-
     return queryResult.rows[0];
 };
 
@@ -56,7 +53,6 @@ const update = async(id: string, payload: Projects): Promise<Projects> => {
 
     const queryResult: ProjectsResult = await client.query(queryString, [id]);
 
-    console.log(payload)
     return queryResult.rows[0];
 };
 

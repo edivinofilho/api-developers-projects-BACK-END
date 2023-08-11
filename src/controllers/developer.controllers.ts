@@ -33,13 +33,13 @@ const destroy = async(req: Request, res: Response): Promise<Response> => {
 };
 
 const createInfo = async (req: Request, res: Response): Promise<Response> => {
+    
     const payload: DeveloperInfoCreate = {
         ...req.body,
         developerId: req.params.id
     }
     const developerInfo: DeveloperInfo = await developerServices.createInfo(payload);
 
-    console.log(developerInfo)
     return res.status(201).json(developerInfo);
 };
 
