@@ -34,7 +34,7 @@ const readById = async (developerId: string): Promise<Developer> => {
         "devInfo"."developerSince" AS "developerInfoDeveloperSince",  
         "devInfo"."preferredOS" AS "developerInfoPreferredOS"
     FROM "developers" AS "dev" 
-    LEFT JOIN "developerInfo" AS "devInfo"
+    LEFT JOIN "developerInfos" AS "devInfo"
     ON "dev".id = "devInfo"."developerId"
     WHERE "dev".id = $1;
     `
