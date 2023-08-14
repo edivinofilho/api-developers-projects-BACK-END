@@ -9,7 +9,7 @@ const developerIdExistsMiddleware = async (req: Request, res: Response, next: Ne
 
     const id: string = req.body.developerId || req.params.id
 
-    const queryResult: QueryResult = await client.query(
+    const queryResult: DeveloperResult = await client.query(
         'SELECT * FROM "developers" WHERE "id" = $1;', [id])
 
     if(!queryResult.rowCount){
