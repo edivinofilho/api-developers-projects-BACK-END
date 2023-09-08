@@ -1,3 +1,37 @@
+# Developer Management API
+
+## Description
+Welcome to the Developer Management API! This API provides a platform for managing developers and their associated projects. Whether you're a software development company or an individual developer, this tool simplifies the process of developer registration, updating developer information, and project management.
+
+## Key Features
+- Developer Registration: Easily register new developers by sending a POST request to /developers. This creates a profile for each developer in your system.
+- Developer Information: Retrieve detailed information about a developer and their associated projects using the GET request to /developers/:id. This endpoint allows you to list a developer's information comprehensively.
+- Developer Updates: Keep developer data up to date with the PATCH request to /developers/:id. Update relevant details as needed.
+- Developer Removal: If necessary, remove a developer from your system using the DELETE request to /developers/:id.
+- Additional Developer Information: Enhance your developer profiles by adding extra information with the POST request to /developers/:id/infos.
+- Project Registration: Register new projects effortlessly by sending a POST request to /projects. This creates a record of each project.
+- Project Details: Retrieve project information, including the associated developer, using the GET request to /projects/:id.
+- Project Updates: Keep project details current with the PATCH request to /projects/:id.
+
+## Technology Stack
+This application is built using a powerful tech stack, including:
+- TypeScript: Providing type safety and enhanced developer experience.
+- TypeORM: A robust Object-Relational Mapping (ORM) library for database interactions.
+- dotenv: Managing environment variables for configuration.
+- Express: A minimal and flexible Node.js web application framework.
+- pg: The PostgreSQL driver for Node.js, ensuring efficient database operations.
+
+## Credits
+This project is part of the Full Stack Developer course at Kenzie Academy Brasil (www.kenzie.com.br). All rights and intellectual property of this project belong to Kenzie Academy Brasil.
+
+I would like to extend my gratitude to the instructors' team at Kenzie for their support and guidance throughout the development of this project.
+
+## Contact
+edivinofilho@hotmail.com
+
+
+## How to Build Guidelines (Como Construir)
+
 # **Controle de projetos - KenzieVelopers**
 
 ## **Introdução**
