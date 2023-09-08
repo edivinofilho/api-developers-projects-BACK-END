@@ -16,7 +16,6 @@ Welcome to the Developer Management API! This API provides a platform for managi
 ## Technology Stack
 This application is built using a powerful tech stack, including:
 - TypeScript: Providing type safety and enhanced developer experience.
-- TypeORM: A robust Object-Relational Mapping (ORM) library for database interactions.
 - dotenv: Managing environment variables for configuration.
 - Express: A minimal and flexible Node.js web application framework.
 - pg: The PostgreSQL driver for Node.js, ensuring efficient database operations.
